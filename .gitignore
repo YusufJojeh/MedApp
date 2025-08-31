@@ -22,3 +22,20 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Large model files
+nlp/models/*.joblib
+nlp/models/archive/
+nlp/venv/
+nlp/__pycache__/
+nlp/*.pyc
+
+# Test files
+test_*.php
+check_*.ps1
+*.bat
+*.sh
+
+# Documentation files (optional - remove if you want to keep them)
+*.md
+!README.md
