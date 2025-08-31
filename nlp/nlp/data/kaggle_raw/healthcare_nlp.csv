@@ -1,0 +1,4 @@
+conversation,patient_query,doctor_response,intent
+"{""patient"": ""It's about a 7, and it gets worse when I breathe deeply"", ""doctor"": ""This could be serious. I recommend seeing a cardiologist immediately""}","It's about a 7, and it gets worse when I breathe deeply",This could be serious. I recommend seeing a cardiologist immediately,medical_consultation
+"{""patient"": ""About three weeks now"", ""doctor"": ""Let's schedule you for a chest X-ray to rule out any serious conditions""}",About three weeks now,Let's schedule you for a chest X-ray to rule out any serious conditions,medical_consultation
+"{""patient"": ""Yes, I lost my job last month"", ""doctor"": ""I understand. Let me refer you to a psychiatrist for proper evaluation""}","Yes, I lost my job last month",I understand. Let me refer you to a psychiatrist for proper evaluation,medical_consultation

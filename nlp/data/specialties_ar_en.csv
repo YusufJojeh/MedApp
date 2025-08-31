@@ -1,0 +1,16 @@
+id,name,name_ar,name_en,description,is_active
+1,Cardiology,أمراض القلب,Cardiology,Heart and cardiovascular system,1
+2,Dermatology,الأمراض الجلدية,Dermatology,"Skin, hair, and nails",1
+3,Neurology,الأمراض العصبية,Neurology,Brain and nervous system,1
+4,Orthopedics,جراحة العظام,Orthopedics,"Bones, joints, and muscles",1
+5,Pediatrics,طب الأطفال,Pediatrics,Children and adolescents,1
+6,Psychiatry,الطب النفسي,Psychiatry,Mental health and behavior,1
+7,Ophthalmology,طب العيون,Ophthalmology,Eyes and vision,1
+8,Dentistry,طب الأسنان,Dentistry,Teeth and oral health,1
+9,Obstetrics & Gynecology,طب النساء والولادة,Obstetrics & Gynecology,Women's health and pregnancy,1
+10,Internal Medicine,الطب الباطني,Internal Medicine,General adult medicine,1
+11,Surgery,الجراحة العامة,Surgery,Surgical procedures,1
+12,Emergency Medicine,طب الطوارئ,Emergency Medicine,Emergency care,1
+13,Radiology,الأشعة,Radiology,Medical imaging,1
+14,Anesthesiology,التخدير,Anesthesiology,Anesthesia and pain management,1
+15,Oncology,الأورام,Oncology,Cancer treatment,1

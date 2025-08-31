@@ -1,0 +1,6 @@
+question,answer,category,intent
+What are the symptoms of diabetes?,"Common symptoms include frequent urination, excessive thirst, fatigue, blurred vision, and slow healing wounds.",symptoms,medical_inquiry
+How often should I take my blood pressure medication?,Follow your doctor's prescription exactly. Most blood pressure medications are taken once daily.,medication,medical_inquiry
+When should I see a cardiologist?,"See a cardiologist if you experience chest pain, shortness of breath, irregular heartbeat, or have a family history of heart disease.",specialist,medical_inquiry
+What causes chronic fatigue?,"Chronic fatigue can be caused by various factors including medical conditions, stress, poor sleep, or underlying diseases.",symptoms,medical_inquiry
+How do I know if I need emergency care?,"Seek emergency care for chest pain, severe bleeding, difficulty breathing, sudden numbness, or severe head injury.",emergency,medical_inquiry

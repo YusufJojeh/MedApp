@@ -1,0 +1,99 @@
+{
+  "cardiology": [
+    "cardiology",
+    "cardiology",
+    "cardiology",
+    "cardiology",
+    "cardiology",
+    "cardiology",
+    "heart",
+    "cardiac",
+    "cardiologist"
+  ],
+  "neurology": [
+    "neurology",
+    "neurology",
+    "neurology",
+    "neurology",
+    "neurology",
+    "neurology",
+    "brain",
+    "neurologist",
+    "nervous system"
+  ],
+  "ophthalmology": [
+    "ophthalmology",
+    "ophthalmology",
+    "ophthalmology",
+    "ophthalmology",
+    "ophthalmology",
+    "ophthalmology",
+    "eye",
+    "vision",
+    "ophthalmologist"
+  ],
+  "dentistry": [
+    "dentistry",
+    "dentistry",
+    "dentistry",
+    "dentistry",
+    "dentistry",
+    "dentistry",
+    "dental",
+    "teeth",
+    "dentist"
+  ],
+  "pediatrics": [
+    "pediatrics",
+    "pediatrics",
+    "pediatrics",
+    "pediatrics",
+    "pediatrics",
+    "pediatrics",
+    "child",
+    "children",
+    "pediatrician"
+  ],
+  "obstetrics & gynecology": [
+    "obstetrics & gynecology",
+    "obstetrics and gynecology",
+    "obstetrics & gynecology",
+    "obstetrics&gynecology",
+    "obstetrics_&_gynecology",
+    "obstetrics-&-gynecology"
+  ],
+  "dermatology": [
+    "dermatology",
+    "dermatology",
+    "dermatology",
+    "dermatology",
+    "dermatology",
+    "dermatology",
+    "skin",
+    "dermatologist"
+  ],
+  "orthopedics": [
+    "orthopedics",
+    "orthopedics",
+    "orthopedics",
+    "orthopedics",
+    "orthopedics",
+    "orthopedics"
+  ],
+  "internal medicine": [
+    "internal medicine",
+    "internal medicine",
+    "internal medicine",
+    "internalmedicine",
+    "internal_medicine",
+    "internal-medicine"
+  ],
+  "psychiatry": [
+    "psychiatry",
+    "psychiatry",
+    "psychiatry",
+    "psychiatry",
+    "psychiatry",
+    "psychiatry"
+  ]
+}

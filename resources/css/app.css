@@ -1,0 +1,290 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+/* ===================== LUXE MINIMAL THEME ===================== */
+:root {
+  /* لوحة الألوان (فاتح) */
+  --gold: #F0C24B; /* الذهب الأساسي */
+  --gold-2: #FFDFA1; /* ذهبي ناعم */
+  --gold-deep: #D9A92F;
+  --bg: #F5F2EC; /* خلفية كريمية */
+  --surface: #FFF7ED; /* طبقات */
+  --text: #111216; /* فحم */
+  --muted: #6F7480; /* رمادي ناعم */
+  --glass: rgba(255,255,255,.58);
+  --glass-strong: rgba(255,255,255,.72);
+  --border: rgba(17,18,22,0.08);
+  --ring: rgba(240,194,75,.28);
+  --shadow: 0 18px 50px rgba(17,18,22,.08);
+  --radius: 18px;
+  --speed: 280ms;
+  --accent-grad: linear-gradient(135deg, #FFF0B3 0%, var(--gold) 35%, #F5CC52 60%, var(--gold-deep) 100%);
+  --bg-grad: radial-gradient(1100px 540px at 12% -10%, rgba(240,194,75,.06), transparent 60%), radial-gradient(900px 600px at 120% 0%, rgba(240,194,75,.05), transparent 55%);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --bg: #0F1419;
+  --surface: #1A202C;
+  --text: #F7FAFC;
+  --muted: #A0AEC0;
+  --glass: rgba(0,0,0,.58);
+  --glass-strong: rgba(0,0,0,.72);
+  --border: rgba(247,250,252,0.08);
+  --ring: rgba(240,194,75,.28);
+  --shadow: 0 18px 50px rgba(0,0,0,.3);
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: all var(--speed) ease;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism components */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.btn-primary {
+  background: var(--accent-grad);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(240, 194, 75, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.card {
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.feature-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.card-header {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all var(--speed) ease;
+}
+
+.navbar {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all var(--speed) ease;
+}
+
+.footer {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  position: relative;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-delay-1 {
+  animation-delay: 2s;
+}
+
+.animate-delay-2 {
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%);
+  animation-delay: 2s;
+}
+
+.shape:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 20%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  animation-delay: 4s;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-gold-2 {
+  background-color: var(--gold-2);
+}
+
+.bg-gold-deep {
+  background-color: var(--gold-deep);
+}
+
+.from-gold {
+  --tw-gradient-from: var(--gold);
+}
+
+.to-gold-deep {
+  --tw-gradient-to: var(--gold-deep);
+}
+
+.from-gold\/20 {
+  --tw-gradient-from: rgb(240 194 75 / 0.2);
+}
+
+.to-gold-deep\/20 {
+  --tw-gradient-to: rgb(217 169 47 / 0.2);
+}
+
+.from-gold\/10 {
+  --tw-gradient-from: rgb(240 194 75 / 0.1);
+}
+
+.to-gold-deep\/10 {
+  --tw-gradient-to: rgb(217 169 47 / 0.1);
+}
+
+/* Custom utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-gradient-hero {
+  background: var(--accent-grad);
+}
+
+.bg-gradient-glass {
+  background: var(--glass);
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "20250824_144031",
+  "total_samples": 148039,
+  "unique_intents": 14,
+  "intents": [
+    "general_inquiry",
+    "greeting",
+    "medication_inquiry",
+    "emergency_guidance",
+    "book",
+    "health_tips",
+    "cancel",
+    "treatment_inquiry",
+    "symptom_inquiry",
+    "availability",
+    "book_appointment",
+    "reschedule",
+    "diagnosis_inquiry",
+    "medical_inquiry"
+  ],
+  "accuracy": 0.7436503647662794,
+  "cv_score_mean": 0.6864881731735907,
+  "cv_score_std": 0.02393987380594001,
+  "model_file": "intent_model_20250824_144031.joblib",
+  "vectorizer_file": "vectorizer_20250824_144031.joblib",
+  "encoder_file": "label_encoder_20250824_144031.joblib"
+}

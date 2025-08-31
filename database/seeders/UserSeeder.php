@@ -1,0 +1,191 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $users = [
+            [
+                'username' => 'admin',
+                'email' => 'admin@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'admin',
+                'first_name' => 'System',
+                'last_name' => 'Administrator',
+                'phone' => '01000000000',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => now(),
+            ],
+            [
+                'username' => 'supervisor',
+                'email' => 'supervisor@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'admin',
+                'first_name' => 'System',
+                'last_name' => 'Supervisor',
+                'phone' => '01000000001',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_ahmed',
+                'email' => 'ahmed.ali@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Ahmed',
+                'last_name' => 'Mohamed Ali',
+                'phone' => '01000000002',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_fatma',
+                'email' => 'fatma.hassan@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Fatma',
+                'last_name' => 'Ahmed Hassan',
+                'phone' => '01000000003',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_mohamed',
+                'email' => 'mohamed.rahman@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Mohamed',
+                'last_name' => 'Abdul Rahman',
+                'phone' => '01000000004',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_sara',
+                'email' => 'sara.mahmoud@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Sara',
+                'last_name' => 'Mahmoud',
+                'phone' => '01000000005',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_ali',
+                'email' => 'ali.hassan@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Ali',
+                'last_name' => 'Hassan Mohamed',
+                'phone' => '01000000006',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'dr_nora',
+                'email' => 'nora.ahmed@medical.com',
+                'password' => Hash::make('password'),
+                'role' => 'doctor',
+                'first_name' => 'Nora',
+                'last_name' => 'Ahmed',
+                'phone' => '01000000007',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_ahmed',
+                'email' => 'ahmed@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Ahmed',
+                'last_name' => 'Mohamed Ali',
+                'phone' => '01012345678',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_sara',
+                'email' => 'sara@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Sara',
+                'last_name' => 'Ahmed Hassan',
+                'phone' => '01123456789',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_mohamed',
+                'email' => 'mohamed@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Mohamed',
+                'last_name' => 'Abdul Rahman',
+                'phone' => '01234567890',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_fatma',
+                'email' => 'fatma@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Fatma',
+                'last_name' => 'Mahmoud',
+                'phone' => '01345678901',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_ali',
+                'email' => 'ali@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Ali',
+                'last_name' => 'Hassan Mohamed',
+                'phone' => '01456789012',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+            [
+                'username' => 'patient_nora',
+                'email' => 'nora@email.com',
+                'password' => Hash::make('password'),
+                'role' => 'patient',
+                'first_name' => 'Nora',
+                'last_name' => 'Ahmed',
+                'phone' => '01567890123',
+                'status' => 'active',
+                'profile_image' => '',
+                'last_login' => null,
+            ],
+        ];
+
+        foreach ($users as $user) {
+            DB::table('users')->insert($user);
+        }
+    }
+}

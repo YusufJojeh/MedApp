@@ -1,0 +1,17 @@
+{
+  "total_samples": 99,
+  "intents": {
+    "symptom_inquiry": 55,
+    "book": 20,
+    "emergency_guidance": 16,
+    "medical_inquiry": 5,
+    "medical_consultation": 3
+  },
+  "datasets_processed": [
+    "medical_intent_classification",
+    "healthcare_nlp",
+    "medical_symptoms",
+    "medical_qa"
+  ],
+  "output_file": "nlp/data/combined_kaggle_data.csv"
+}

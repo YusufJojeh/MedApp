@@ -1,0 +1,41 @@
+question,answer,category,source
+What are the symptoms of a heart attack?,"Common symptoms include chest pain or discomfort, shortness of breath, nausea, lightheadedness, and pain in the arms, neck, jaw, or back.",medical_qa,synthetic
+How can I prevent heart disease?,"Prevent heart disease by maintaining a healthy diet, exercising regularly, avoiding smoking, managing stress, and getting regular check-ups.",medical_qa,synthetic
+What is high blood pressure?,"High blood pressure (hypertension) is when the force of blood against artery walls is consistently too high, which can lead to heart disease and stroke.",medical_qa,synthetic
+What causes chest pain?,"Chest pain can be caused by heart problems, lung issues, digestive problems, muscle strain, anxiety, or other conditions.",medical_qa,synthetic
+How is heart disease diagnosed?,"Heart disease is diagnosed through physical exams, blood tests, electrocardiograms, echocardiograms, stress tests, and other imaging procedures.",medical_qa,synthetic
+What causes acne?,"Acne is caused by clogged hair follicles, excess oil production, bacteria, and inflammation. Hormonal changes, stress, and certain medications can trigger it.",medical_qa,synthetic
+How can I prevent skin cancer?,"Prevent skin cancer by using sunscreen, avoiding excessive sun exposure, wearing protective clothing, and getting regular skin checks.",medical_qa,synthetic
+What is eczema?,"Eczema is a skin condition that causes red, itchy, and inflamed patches. It's often related to allergies and can be managed with proper skincare.",medical_qa,synthetic
+How do I treat a sunburn?,"Treat sunburn by cooling the skin, staying hydrated, using aloe vera, taking pain relievers, and avoiding further sun exposure.",medical_qa,synthetic
+What causes hives?,"Hives are caused by allergic reactions, stress, infections, or physical triggers. They appear as red, itchy welts on the skin.",medical_qa,synthetic
+What causes migraines?,"Migraines can be caused by genetic factors, hormonal changes, stress, certain foods, environmental factors, and sleep disturbances.",medical_qa,synthetic
+How is epilepsy diagnosed?,"Epilepsy is diagnosed through medical history, neurological exams, EEG tests, brain imaging, and blood tests.",medical_qa,synthetic
+What are the symptoms of a stroke?,"Stroke symptoms include sudden numbness, confusion, trouble speaking, vision problems, dizziness, and severe headache.",medical_qa,synthetic
+What causes memory loss?,"Memory loss can be caused by aging, stress, sleep deprivation, medications, alcohol, and neurological conditions.",medical_qa,synthetic
+How can I improve brain health?,"Improve brain health through regular exercise, healthy diet, adequate sleep, mental stimulation, and stress management.",medical_qa,synthetic
+What causes back pain?,"Back pain can be caused by muscle strain, poor posture, injury, obesity, stress, and underlying medical conditions.",medical_qa,synthetic
+How do I treat a sprained ankle?,"Treat a sprained ankle with rest, ice, compression, elevation (RICE), pain medication, and physical therapy.",medical_qa,synthetic
+What is arthritis?,"Arthritis is inflammation of joints causing pain, stiffness, and reduced mobility. There are many types including osteoarthritis and rheumatoid arthritis.",medical_qa,synthetic
+How can I prevent osteoporosis?,"Prevent osteoporosis with calcium-rich diet, vitamin D, regular exercise, avoiding smoking, and limiting alcohol.",medical_qa,synthetic
+What causes joint pain?,"Joint pain can be caused by injury, arthritis, overuse, infection, autoimmune diseases, and other medical conditions.",medical_qa,synthetic
+When should my child get vaccinated?,Children should follow the recommended vaccination schedule from birth through adolescence to protect against serious diseases.,medical_qa,synthetic
+How much sleep do children need?,"Children need 9-12 hours of sleep depending on age. Newborns need 14-17 hours, while teenagers need 8-10 hours.",medical_qa,synthetic
+What are common childhood illnesses?,"Common childhood illnesses include colds, flu, ear infections, strep throat, chickenpox, and stomach viruses.",medical_qa,synthetic
+How can I help my child's development?,"Support child development through reading, play, healthy nutrition, regular check-ups, and positive reinforcement.",medical_qa,synthetic
+When should I take my child to the doctor?,"Take your child to the doctor for fever, persistent symptoms, unusual behavior, or if you're concerned about their health.",medical_qa,synthetic
+What are the symptoms of depression?,"Depression symptoms include persistent sadness, loss of interest, changes in appetite or sleep, fatigue, and thoughts of self-harm.",medical_qa,synthetic
+How can I manage anxiety?,"Manage anxiety through therapy, medication, relaxation techniques, exercise, adequate sleep, and stress management.",medical_qa,synthetic
+What causes insomnia?,"Insomnia can be caused by stress, anxiety, depression, medications, caffeine, alcohol, and underlying medical conditions.",medical_qa,synthetic
+How do I know if I need therapy?,"Consider therapy if you're struggling with emotions, relationships, stress, trauma, or if daily life is significantly affected.",medical_qa,synthetic
+What is bipolar disorder?,Bipolar disorder is a mental health condition characterized by extreme mood swings including emotional highs and lows.,medical_qa,synthetic
+What causes vision problems?,"Vision problems can be caused by aging, genetics, injury, disease, and environmental factors like excessive screen time.",medical_qa,synthetic
+How can I protect my eyes?,"Protect your eyes by wearing sunglasses, taking screen breaks, eating eye-healthy foods, and getting regular eye exams.",medical_qa,synthetic
+What is glaucoma?,"Glaucoma is a group of eye conditions that damage the optic nerve, often caused by high eye pressure and leading to vision loss.",medical_qa,synthetic
+How do I know if I need glasses?,"You may need glasses if you experience blurry vision, headaches, eye strain, or difficulty seeing at distance or up close.",medical_qa,synthetic
+What causes dry eyes?,"Dry eyes can be caused by aging, medications, environmental factors, screen time, and underlying medical conditions.",medical_qa,synthetic
+How can I boost my immune system?,"Boost your immune system with adequate sleep, healthy diet, regular exercise, stress management, and good hygiene.",medical_qa,synthetic
+What are the benefits of exercise?,"Exercise improves cardiovascular health, strengthens muscles, boosts mood, helps with weight management, and reduces disease risk.",medical_qa,synthetic
+How much water should I drink?,"Most adults should drink 8-10 glasses of water daily, but needs vary based on activity level, climate, and health conditions.",medical_qa,synthetic
+What causes fatigue?,"Fatigue can be caused by lack of sleep, stress, poor nutrition, medical conditions, medications, and lifestyle factors.",medical_qa,synthetic
+How can I improve my sleep?,"Improve sleep by maintaining a regular schedule, creating a comfortable environment, avoiding screens before bed, and managing stress.",medical_qa,synthetic
