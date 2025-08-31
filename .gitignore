@@ -23,12 +23,8 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 
-# Large model files
-nlp/models/*.joblib
-nlp/models/archive/
-nlp/venv/
-nlp/__pycache__/
-nlp/*.pyc
+# Exclude entire NLP folder
+nlp/
 
 # Test files
 test_*.php
