@@ -36,3 +36,4 @@ check_*.ps1
 # Documentation files (optional - remove if you want to keep them)
 *.md
 !README.md
+!NLP_SHARING_GUIDE.md
