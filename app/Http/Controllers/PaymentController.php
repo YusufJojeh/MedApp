@@ -371,6 +371,10 @@ class PaymentController extends Controller
                     'updated_at' => now(),
                 ]);
 
+                // Send notification
+                $notificationService = app(\App\Services\NotificationService::class);
+                $notificationService->paymentSuccessful($id);
+
                 DB::commit();
 
                 return response()->json([
@@ -394,6 +398,10 @@ class PaymentController extends Controller
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
+
+                // Send notification
+                $notificationService = app(\App\Services\NotificationService::class);
+                $notificationService->paymentFailed($id);
 
                 DB::commit();
 
@@ -445,8 +453,15 @@ class PaymentController extends Controller
             // Update payment status
             DB::table('payments')->where('id', $id)->update([
                 'STATUS' => 'refunded',
+                'refunded_amount' => $request->refund_amount,
+                'refund_reason' => $request->reason,
+                'refunded_at' => now(),
                 'updated_at' => now(),
             ]);
+
+            // Send notification
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->paymentRefunded($id);
 
             // Log refund
             DB::table('payment_webhooks')->insert([

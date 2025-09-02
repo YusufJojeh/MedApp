@@ -30,6 +30,17 @@ class User extends Authenticatable
         'profile_image',
         'is_active',
         'email_verified_at',
+        // Notification preferences
+        'email_notifications',
+        'sms_notifications',
+        'push_notifications',
+        'appointment_reminders',
+        'payment_notifications',
+        'system_notifications',
+        'appointment_reminder_hours',
+        'notification_timezone',
+        'quiet_hours_start',
+        'quiet_hours_end',
     ];
 
     /**
@@ -116,6 +127,22 @@ class User extends Authenticatable
     public function loginActivities(): HasMany
     {
         return $this->hasMany(LoginActivity::class);
+    }
+
+    /**
+     * Get the notifications for the user.
+     */
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    /**
+     * Get the unread notifications for the user.
+     */
+    public function unreadNotifications(): HasMany
+    {
+        return $this->hasMany(Notification::class)->unread();
     }
 
     /**

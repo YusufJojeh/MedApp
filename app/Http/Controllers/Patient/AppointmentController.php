@@ -220,6 +220,10 @@ class AppointmentController extends Controller
             'updated_at' => now()
         ]);
 
+        // Send notification
+        $notificationService = app(\App\Services\NotificationService::class);
+        $notificationService->appointmentBooked($appointmentId);
+
         return response()->json([
             'success' => true,
             'message' => $request->filled('reschedule_appointment_id') ? 'Appointment rescheduled successfully' : 'Appointment booked successfully',
@@ -287,6 +291,10 @@ class AppointmentController extends Controller
         DB::table('appointments')
             ->where('id', $id)
             ->update(['STATUS' => 'cancelled']);
+
+        // Send notification
+        $notificationService = app(\App\Services\NotificationService::class);
+        $notificationService->appointmentCancelled($id, 'patient');
 
         return response()->json(['success' => true, 'message' => 'Appointment cancelled successfully']);
     }

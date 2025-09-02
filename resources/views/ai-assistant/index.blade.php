@@ -71,11 +71,11 @@
                     <!-- Chat Header -->
                     <div class="bg-gradient-to-r from-gold/20 to-gold-deep/20 p-6 border-b border-white/10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-br from-gold to-gold-deep rounded-2xl flex items-center justify-center">
-                                    <i class="fas fa-robot text-white text-xl"></i>
-                                </div>
-                                                            <div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gold to-gold-deep rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-robot text-white text-xl"></i>
+                            </div>
+                            <div>
                                 <h2 class="text-xl font-bold text-white">AI Health Assistant</h2>
                                 <p id="ai-status" class="text-gray-300 text-sm">Connecting to AI service...</p>
                             </div>
@@ -718,20 +718,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             return `
-                <div class="bg-white/10 rounded-lg p-3">
+                        <div class="bg-white/10 rounded-lg p-3">
                     <h5 class="text-white font-medium mb-2">${displayName}</h5>
                     <p class="text-green-200 text-sm mb-3">${displayInfo}</p>
-                    <div class="flex space-x-2">
+                            <div class="flex space-x-2">
                         <button data-doctor-id="${doctorId}" data-doctor-name="${doctorName}" data-fee="${consultationFee}" data-payment="wallet"
-                                class="book-wallet-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors duration-200">
-                            💳 Book with Wallet
-                        </button>
+                                        class="book-wallet-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors duration-200">
+                                    💳 Book with Wallet
+                                </button>
                         <button data-doctor-id="${doctorId}" data-doctor-name="${doctorName}" data-fee="${consultationFee}" data-payment="pay_on_site"
-                                class="book-site-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors duration-200">
-                            💰 Pay on Site
-                        </button>
-                    </div>
-                </div>
+                                        class="book-site-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors duration-200">
+                                    💰 Pay on Site
+                                </button>
+                            </div>
+                        </div>
             `;
         }).join('');
 
@@ -893,22 +893,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Process the booking
+        // Process the booking
             fetch('/ai/book-appointment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                },
-                body: JSON.stringify({
-                    doctor_id: doctorId,
-                    appointment_date: appointmentDate,
-                    appointment_time: appointmentTime,
-                    consultation_fee: consultationFee,
-                    payment_method: paymentMethod
-                })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({
+                doctor_id: doctorId,
+                appointment_date: appointmentDate,
+                appointment_time: appointmentTime,
+                consultation_fee: consultationFee,
+                payment_method: paymentMethod
             })
+        })
                 .then(response => {
             if (response.status === 401) {
                 throw new Error('Authentication required');
@@ -958,8 +958,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 addMessage(authMessage, 'ai', 'book_appointment');
                 window.showToast('Please login to book appointments', 'info');
             } else {
-                window.showToast('Error processing booking', 'error');
-                console.error('Booking error:', error);
+            window.showToast('Error processing booking', 'error');
+            console.error('Booking error:', error);
             }
         });
         });

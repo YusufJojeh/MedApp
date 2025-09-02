@@ -187,6 +187,11 @@ class WalletController extends Controller
                 'updated_at' => now(),
             ]);
 
+            // Send notification for withdrawal request
+            $notificationService = app(\App\Services\NotificationService::class);
+            $transactionId = DB::getPdo()->lastInsertId();
+            $notificationService->walletTransactionCompleted($transactionId);
+
             DB::commit();
 
             return response()->json([
@@ -196,6 +201,11 @@ class WalletController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
+
+            // Send notification for failed transaction
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->walletTransactionFailed($userId, 'Withdrawal request failed', 'Failed to submit withdrawal request: ' . $e->getMessage());
+
             return response()->json([
                 'success' => false,
                 'message' => 'Error submitting withdrawal request: ' . $e->getMessage()

@@ -118,6 +118,10 @@ class ProfileController extends Controller
                 $adminData
             );
 
+            // Send notification for profile update
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->profileUpdated($admin->id);
+
             DB::commit();
 
             return redirect()->route('admin.profile.index')

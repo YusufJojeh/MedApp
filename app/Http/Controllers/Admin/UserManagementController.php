@@ -582,6 +582,10 @@ class UserManagementController extends Controller
             'updated_at' => now()
         ]);
 
+        // Send notification for account activation
+        $notificationService = app(\App\Services\NotificationService::class);
+        $notificationService->accountActivated($id);
+
         return response()->json([
             'success' => true,
             'message' => 'User activated successfully'
@@ -597,6 +601,10 @@ class UserManagementController extends Controller
             'status' => 'inactive',
             'updated_at' => now()
         ]);
+
+        // Send notification for account deactivation
+        $notificationService = app(\App\Services\NotificationService::class);
+        $notificationService->accountDeactivated($id);
 
         return response()->json([
             'success' => true,

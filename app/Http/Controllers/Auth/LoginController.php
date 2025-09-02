@@ -35,6 +35,9 @@ class LoginController extends Controller
 
             $user = Auth::user();
 
+            // Check for new device login and send security notification
+            $this->checkNewDeviceLogin($user, $request);
+
             // Redirect based on role
             switch ($user->role) {
                 case 'admin':
@@ -64,5 +67,52 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    /**
+     * Check for new device login and send security notification
+     */
+    private function checkNewDeviceLogin($user, Request $request)
+    {
+        $userAgent = $request->header('User-Agent');
+        $ipAddress = $request->ip();
+        
+        // Check if this is a new device/IP combination
+        $lastLogin = DB::table('user_login_history')
+            ->where('user_id', $user->id)
+            ->where('ip_address', $ipAddress)
+            ->where('user_agent', $userAgent)
+            ->first();
+
+        if (!$lastLogin) {
+            // This is a new device/IP, send security notification
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->createNotification(
+                $user->id,
+                'security',
+                'New Login Detected',
+                'A new login was detected from a new device or location. If this wasn\'t you, please contact support immediately.',
+                [
+                    'icon' => '🔒',
+                    'color' => 'red',
+                    'priority' => 'high',
+                    'data' => [
+                        'ip_address' => $ipAddress,
+                        'user_agent' => $userAgent,
+                        'timestamp' => now()
+                    ]
+                ]
+            );
+        }
+
+        // Log this login attempt
+        DB::table('user_login_history')->insert([
+            'user_id' => $user->id,
+            'ip_address' => $ipAddress,
+            'user_agent' => $userAgent,
+            'login_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 }

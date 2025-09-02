@@ -24,6 +24,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AiProxyController;
+use App\Http\Controllers\NotificationController;
 
 // ============================================================================
 // PUBLIC ROUTES
@@ -72,6 +73,29 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.submit');
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register.submit');
+});
+
+// ============================================================================
+// NOTIFICATION ROUTES (for authenticated users)
+// ============================================================================
+
+Route::middleware(['auth'])->prefix('notifications')->name('notifications.')->group(function () {
+    Route::get('/', [NotificationController::class, 'index'])->name('index');
+    Route::get('/unread-count', [NotificationController::class, 'getUnreadCount'])->name('unread-count');
+    Route::get('/recent', [NotificationController::class, 'getRecent'])->name('recent');
+    Route::post('/{id}/read', [NotificationController::class, 'markAsRead'])->name('mark-read');
+    Route::post('/{id}/unread', [NotificationController::class, 'markAsUnread'])->name('mark-unread');
+    Route::post('/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('mark-all-read');
+    Route::delete('/{id}', [NotificationController::class, 'destroy'])->name('destroy');
+    Route::delete('/delete-read', [NotificationController::class, 'deleteRead'])->name('delete-read');
+    Route::get('/settings', [NotificationController::class, 'showSettingsPage'])->name('settings');
+    Route::get('/settings/api', [NotificationController::class, 'getSettings'])->name('settings.api');
+    Route::post('/settings', [NotificationController::class, 'updateSettings'])->name('update-settings');
+    Route::post('/test', [NotificationController::class, 'testNotification'])->name('test');
+    Route::get('/stats', [NotificationController::class, 'getStats'])->name('stats');
+    Route::get('/test-page', function () {
+        return view('notifications.test');
+    })->name('test-page');
 });
 
 // ============================================================================
@@ -226,10 +250,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 });
 
 // ============================================================================
-// DOCTOR ROUTES (TEMPORARILY DISABLED)
+// DOCTOR ROUTES
 // ============================================================================
 
-/*
 Route::middleware(['auth', 'doctor'])->prefix('doctor')->name('doctor.')->group(function () {
     // Dashboard
     Route::get('/', [DoctorDashboardController::class, 'index'])->name('dashboard');
@@ -288,7 +311,6 @@ Route::middleware(['auth', 'doctor'])->prefix('doctor')->name('doctor.')->group(
         Route::get('/patients', [DoctorReportController::class, 'patients'])->name('patients');
     });
 });
-*/
 
 // ============================================================================
 // PATIENT ROUTES

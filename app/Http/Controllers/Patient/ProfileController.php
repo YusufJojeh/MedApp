@@ -103,6 +103,10 @@ class ProfileController extends Controller
                 'updated_at' => now(),
             ]);
 
+            // Send notification for profile update
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->profileUpdated($patientId);
+
             DB::commit();
 
             return response()->json([
@@ -142,6 +146,10 @@ class ProfileController extends Controller
                 'phone' => $request->phone,
                 'updated_at' => now(),
             ]);
+
+            // Send notification for account update
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->profileUpdated($userId);
 
             DB::commit();
 

@@ -543,6 +543,30 @@
                                 </div>
                             @endif
 
+                            <!-- Notifications Dropdown -->
+                            <div class="relative ml-4" x-data="{ open: false }" id="notificationsDropdown">
+                                <button @click="open = !open" class="flex items-center text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors relative">
+                                    <i class="fas fa-bell text-xl"></i>
+                                    <span id="notificationBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                                </button>
+                                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-80 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl shadow-lg py-1 z-50 max-h-96 overflow-y-auto">
+                                    <div class="px-4 py-2 border-b border-white/10">
+                                        <div class="flex items-center justify-between">
+                                            <h3 class="text-sm font-medium text-white">Notifications</h3>
+                                            <a href="{{ route('notifications.index') }}" class="text-xs text-blue-400 hover:text-blue-300">View All</a>
+                                        </div>
+                                    </div>
+                                    <div id="notificationsList" class="divide-y divide-white/10">
+                                        <!-- Notifications will be loaded here -->
+                                    </div>
+                                    <div class="px-4 py-2 border-t border-white/10">
+                                        <a href="{{ route('notifications.settings') }}" class="text-xs text-gray-400 hover:text-white block text-center">
+                                            <i class="fas fa-cog mr-1"></i>Notification Settings
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- User Profile Dropdown -->
                             <div class="relative ml-4" x-data="{ open: false }">
                                 <button @click="open = !open" class="flex items-center text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
@@ -843,6 +867,62 @@
                 }, 300);
             }, 5000);
         };
+
+        // Load Notifications
+        function loadNotifications() {
+            if (document.getElementById('notificationsDropdown')) {
+                fetch('/notifications/recent')
+                    .then(response => response.json())
+                    .then(data => {
+                        const notificationsList = document.getElementById('notificationsList');
+                        const badge = document.getElementById('notificationBadge');
+
+                        if (data.notifications && data.notifications.length > 0) {
+                            notificationsList.innerHTML = data.notifications.map(notification => `
+                                <div class="px-4 py-3 hover:bg-white/5 transition-colors ${notification.is_unread ? 'bg-blue-500/10' : ''}">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="text-lg">${notification.icon}</div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-medium text-white">${notification.title}</p>
+                                            <p class="text-xs text-gray-300 mt-1">${notification.message}</p>
+                                            <p class="text-xs text-gray-400 mt-1">${notification.time_ago}</p>
+                                        </div>
+                                        ${notification.is_unread ? '<div class="w-2 h-2 bg-blue-500 rounded-full"></div>' : ''}
+                                    </div>
+                                </div>
+                            `).join('');
+
+                            // Update badge
+                            const unreadCount = data.notifications.filter(n => n.is_unread).length;
+                            if (unreadCount > 0) {
+                                badge.textContent = unreadCount > 99 ? '99+' : unreadCount;
+                                badge.classList.remove('hidden');
+                            } else {
+                                badge.classList.add('hidden');
+                            }
+                        } else {
+                            notificationsList.innerHTML = `
+                                <div class="px-4 py-8 text-center">
+                                    <div class="text-4xl mb-2">🔔</div>
+                                    <p class="text-sm text-gray-400">No notifications</p>
+                                </div>
+                            `;
+                            badge.classList.add('hidden');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading notifications:', error);
+                    });
+            }
+        }
+
+        // Load notifications on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNotifications();
+
+            // Refresh notifications every 30 seconds
+            setInterval(loadNotifications, 30000);
+        });
 
         // AI Assistant Modal
         window.showAIModal = function() {

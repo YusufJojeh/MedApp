@@ -110,6 +110,10 @@ class RegisterController extends Controller
             // Log registration activity
             // $this->logRegistrationActivity($userId, $request);
 
+            // Send notification for new user registration
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->userRegistered($userId);
+
             DB::commit();
 
             // Auto-login the user

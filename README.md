@@ -115,23 +115,18 @@ php artisan serve
 
 ## 🤖 AI Service Setup
 
-### 1. Download AI Components
-Download the AI components from the latest release:
-- **GitHub Release**: [Download NLP AI Components](https://github.com/YusufJojeh/MedApp/releases/latest)
-- Extract the `nlp.zip` file to your project root
-
-### 2. Install Python Dependencies
+### 1. Install Python Dependencies
 ```bash
 cd nlp
 pip install -r requirements.txt
 ```
 
-### 3. Start AI Service
+### 2. Start AI Service
 ```bash
 python server.py
 ```
 
-### 4. Configure AI Integration
+### 3. Configure AI Integration
 Update your `.env` file:
 ```env
 AI_SERVICE_URL=http://localhost:5000

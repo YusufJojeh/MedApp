@@ -129,6 +129,10 @@ class ProfileController extends Controller
                 ]);
             }
 
+            // Send notification for profile update
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->profileUpdated($doctorId);
+
             DB::commit();
 
             return response()->json([
@@ -273,6 +277,10 @@ class ProfileController extends Controller
                         'updated_at' => now(),
                     ]);
             }
+
+            // Send notification for schedule update
+            $notificationService = app(\App\Services\NotificationService::class);
+            $notificationService->scheduleUpdated($doctor->id);
 
             DB::commit();
 

@@ -193,6 +193,16 @@ class AppointmentController extends Controller
                 'updated_at' => now(),
             ]);
 
+            // Send notification based on status change
+            $notificationService = app(\App\Services\NotificationService::class);
+            if ($request->status === 'confirmed') {
+                $notificationService->appointmentConfirmed($id);
+            } elseif ($request->status === 'cancelled') {
+                $notificationService->appointmentCancelled($id, 'doctor');
+            } elseif ($request->status === 'completed') {
+                $notificationService->appointmentCompleted($id);
+            }
+
             DB::commit();
 
             return response()->json([
