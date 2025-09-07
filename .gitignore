@@ -23,8 +23,9 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 
-# Exclude entire NLP folder
+# Exclude entire NLP folder and zip files
 nlp/
+*.zip
 
 # Test files and scripts
 test_*.php
